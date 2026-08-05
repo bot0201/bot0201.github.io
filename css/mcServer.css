@@ -54,12 +54,26 @@ html {
 }
 
 .header {
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    font-size: 1.6rem; /* 稍微调大一点更显眼 */
+    font-weight: 800;
+    
+    /* 1. 增加一个渐变色 */
+    background: linear-gradient(90deg, #fbc2eb, #a6c1ee, #fbc2eb);
+    background-size: 300% 100%; /* 放大背景，让流动有空间 */
+    
+    /* 2. 文字透明，背景显现 */
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* 3. 动画核心：让背景位置无限循环 */
+    animation: flowText 4s linear infinite;
+}
+
+/* 定义流动动画 */
+@keyframes flowText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 .content {
