@@ -1,164 +1,277 @@
-/* 全局样式 */
-body {
-    font-family: 'Arial', sans-serif;
+/* ===== 全局重置与基础变量 ===== */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
-/* 导航栏样式 */
-.nav {
-    background-color: #2c3e50;
-    color: white;
-    padding: 0;
-    position: sticky;
-    top: 10px; /* 顶部留出10px空隙 */
-    margin: 10px 20px; /* 左右各留20px空隙，上下各10px */
-    border-radius: 15px; /* 添加圆角 */
-    z-index: 100;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 增强阴影效果 */
-    animation: floatAnimation 2s ease-in-out infinite;
+body {
+    /* 深色渐变背景，衬托毛玻璃的透亮感 */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding-bottom: 60px;
 }
-@keyframes floatAnimation {
-    0%, 50% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(2px);
-    }
+
+/* ===== 滚动条美化和平滑滚动 ===== */
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a47a3;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6b68c6;
+}
+
+/* ===== 导航栏（毛玻璃高级版） ===== */
+.nav {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    max-width: 1000px;
+    margin: 20px auto;
+    /* 毛玻璃核心配方 */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .header {
-    font-size: 1.8rem;
-    text-align: center;
-    padding: 1rem 0; /* 增加内边距 */
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    margin: 0; /* 移除默认外边距 */
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0.5rem 0;
-    margin: 0 20px; /* 两侧留出空隙 */
-}
-
-.navItem {
-    margin: 0 1rem;
+    gap: 25px;
 }
 
 .navItem a {
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .navItem a:hover {
-    background-color: #34495e;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* 通用区块样式 */
-[class^="Section"] {
-    padding: 2rem 10%;
-    margin: 1rem 0;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ===== 顶级板块标题 ===== */
+.SectionOne, .SectionTwo, .SectionThree {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-[class$="Header"] h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-/* 第一部分样式 */
-.SectionOne {
+/* ===== SectionOne：前往游玩（大号毛玻璃卡片） ===== */
+.sectionOneHeader h1 {
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sectionOneContent {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .sectionOneContent h3 {
-    color: #2980b9;
     font-size: 1.5rem;
 }
-
+.sectionOneContent b {
+    font-size: 1.8rem;
+    color: #9ae6b4; /* 清爽的薄荷绿，突出IP */
+    letter-spacing: 2px;
+}
 .comment {
-    background-color: #f8f9fa;
-    border-left: 4px solid #e74c3c;
-    padding: 1rem;
-    margin: 1rem auto;
-    max-width: 600px;
-    text-align: left;
+    margin-top: 20px;
+    opacity: 0.7;
+    font-size: 0.95rem;
 }
 
-.comment p {
-    margin: 0;
-    color: #7f8c8d;
-}
-
-/* 第二部分样式 */
-.sectionTwoBedwarsHeader h4,
-.sectionTwoBridgeWarsHeader h4,
-.sectionTwoTwoBuildersTwoToolsHeader h4 {
-    color: #16a085;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-[class$="ModeHeader"],
-[class$="PlayingImageHeader"] {
-    font-weight: bold;
-    color: #34495e;
-    margin: 1rem 0 0.5rem;
-}
-
-/* 图片容器样式 */
-[class$="Image"] {
-    background-color: #ecf0f1;
-    padding: 1rem;
-    margin: 0.5rem 0;
+/* ===== SectionTwo：玩法介绍（毛玻璃网格布局） ===== */
+.sectionTwoHeader h1 {
+    font-size: 2.5rem;
     text-align: center;
-    border-radius: 4px;
-    min-height: 100px;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 清理掉你原本的散乱结构，使用 CSS Grid 将其自动排版 */
+.SectionTwo {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
-/* 第三部分样式 */
-.SectionThree {
+.bedwars, .sectionTwoBridgeWars {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.bedwars > div, .sectionTwoBridgeWars > div {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bedwars > div:hover, .sectionTwoBridgeWars > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.bedwars h4, .sectionTwoBridgeWars h4 {
+    font-size: 1.6rem;
+    display: inline-block;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    /* 现代 UI 小点缀：一个颜色块 */
+    position: relative;
+    padding-left: 10px;
+}
+.bedwars h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ff9a9e;
+    border-radius: 2px;
+}
+.sectionTwoBridgeWars h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #43e97b;
+    border-radius: 2px;
+}
+
+.bedwars p, .sectionTwoBridgeWars p {
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* 由于图片没上传，给占位图框做个漂亮的样式 */
+.sectionTwoBedwarsContentExperiementModeImage,
+.sectionTwoBedwarsContentClassicModeImage,
+.sectionTwoBridgeWarsContentPlayingImageOne,
+.sectionTwoBridgeWarsContentPlayingImageTwo {
+    width: 100%;
+    min-height: 150px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.sectionTwoBedwarsContentExperiementModeImage img,
+.sectionTwoBedwarsContentClassicModeImage img,
+.sectionTwoBridgeWarsContentPlayingImageOne img,
+.sectionTwoBridgeWarsContentPlayingImageTwo img {
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ===== SectionThree 风景欣赏 ===== */
+.SectionThree h1 {
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ffecd2, #fcb69f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .SectionThreeContent {
-    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.SectionThreeContent img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    min-height: 200px;
+    width: 100%;
+    object-fit: contain;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .content {
+/* ===== 移动端适配 ===== */
+@media screen and (max-width: 600px) {
+    .nav {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 15px;
+        top: 0;
+        border-radius: 0 0 20px 20px;
+        margin: 0;
     }
-    
-    .navItem {
-        margin: 0.5rem 0;
+    .content {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
-    
-    [class^="Section"] {
-        padding: 1.5rem 5%;
+    .header {
+        text-align: center;
     }
-}
-
-/* 滚动动画效果 */
-.scroll-to {
-    cursor: pointer;
 }
