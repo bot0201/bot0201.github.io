@@ -52,7 +52,6 @@ body {
     border-radius: 8px;
     z-index: 1;
     transition: 0.5s;
-    width: 100%;
     width: 100%;           /* 保持宽度撑满盒子 */
     margin: 0;             /* 取消左右各 10px 的边距，消除黑缝 */
     box-sizing: border-box; /* 防止 padding 把盒子撑爆 */
@@ -81,6 +80,10 @@ body {
     font-weight: 700;
     margin-top: 5px;
     transition: 0.6s;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 
+        0 8px 32px rgba(255, 0, 88, 0.15),  /* 粉色泛光 */
+        0 8px 32px rgba(0, 168, 255, 0.15); /* 蓝色泛光 */
 }
 
 .box:hover .content {
