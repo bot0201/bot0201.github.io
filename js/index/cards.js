@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.card')
+const cards = document.querySelectorAll('.box')
 cards.forEach(
     card => {
         card.onmousemove = function(e) {
