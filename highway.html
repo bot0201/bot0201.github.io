@@ -1,1 +1,69 @@
-<!-- 百 废 待 兴 -->
+<!-- d:\tmpHTML\html.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBLT高速筑路进程</title>
+    <link rel="stylesheet" href="hw.css">
+</head>
+<body>
+    <!-- 顶部坐标栏 -->
+    <div class="top-bar">
+        <div class="coord-display">
+            <span class="coord-label">X:</span>
+            <span class="coord-value" id="coordX">0</span>
+            <span class="coord-label">Z:</span>
+            <span class="coord-value" id="coordZ">0</span>
+        </div>
+    </div>
+
+    <!-- 右侧工具栏：只保留 +/- -->
+    <div class="toolbar right-toolbar">
+        <button class="tool-btn" id="btnZoomIn" title="放大">➕</button>
+        <button class="tool-btn" id="btnZoomOut" title="缩小">➖</button>
+    </div>
+
+    <!-- 操作提示 -->
+    <div class="glass-panel tips" id="tipsPanel">
+        <div class="tips-title">操作说明</div>
+        <div class="tip-item">🖱️ 滚轮：缩放视图</div>
+        <div class="tip-item">✋ 拖拽：平移地图</div>
+        <div class="tip-item">👆 点击节点：查看详情</div>
+        <div class="tip-item">📍 Y: 120</div>
+        <button class="close-btn" onclick="toggleTips()">×</button>
+    </div>
+
+    <!-- 可隐藏统计托盘 -->
+    <div class="glass-panel tray" id="statsTray">
+        <div class="tray-header" onclick="toggleTray()">
+            <span class="tray-title">📊 筑路统计</span>
+            <span class="tray-toggle" id="trayToggle">▼</span>
+        </div>
+        <div class="tray-content" id="trayContent">
+            <div class="stat-row">
+                <span class="stat-label">已放置方块</span>
+                <span class="stat-value placed" id="placedCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">已摧毁方块</span>
+                <span class="stat-value destroyed" id="destroyedCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">净消耗方块</span>
+                <span class="stat-value net" id="netCount">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">当前缩放</span>
+                <span class="stat-value" id="zoomLevel">100%</span>
+            </div>
+            <div class="info">摧毁方块/消耗方块计数开发中...</div>
+        </div>
+    </div>
+
+    <!-- 主画布 -->
+    <canvas id="roadCanvas"></canvas>
+
+    <script src="hw.js"></script>
+</body>
+</html>
