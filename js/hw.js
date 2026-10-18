@@ -406,7 +406,7 @@ function drawNodes() {
 }
 
 // 施工位置常量
-const PlayerX = -23;
+const PlayerX = -700;
 const PlayerZ = -10000;
 const PlayerDirection = 'W'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
 
