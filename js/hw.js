@@ -86,9 +86,9 @@ function generateNetwork() {
         { x: -7500*S, y: 0, label: '7k', status: 'completed' },
         { x: -7500*S, y: -7500*S, label: '7k', status: 'completed' },
 
-        // 第7层 (10000) - 1w，无斜环，规划中
+        // 第7层 (10000) - 1w，无斜环，正在建设
         { x: 0, y: -10000*S, label: '1w', status: 'planned' },
-        { x: 10000*S, y: -10000*S, label: '1w', status: 'planned' },
+        { x: 10000*S, y: -10000*S, label: '1w', status: 'completed' },
         { x: 10000*S, y: 0, label: '1w', status: 'planned' },
         { x: 10000*S, y: 10000*S, label: '1w', status: 'planned' },
         { x: 0, y: 10000*S, label: '1w', status: 'planned' },
@@ -406,7 +406,7 @@ function drawNodes() {
 }
 
 // 施工位置常量
-const PlayerX = -1174;
+const PlayerX = -23;
 const PlayerZ = -10000;
 const PlayerDirection = 'W'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
 
