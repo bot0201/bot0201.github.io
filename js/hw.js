@@ -1,4 +1,3 @@
-// d:\tmpHTML\js.js
 const canvas = document.getElementById('roadCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -406,9 +405,9 @@ function drawNodes() {
 }
 
 // 施工位置常量
-const PlayerX = -700;
-const PlayerZ = -10000;
-const PlayerDirection = 'W'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
+const PlayerX = -5075;
+const PlayerZ = -5075;
+const PlayerDirection = 'NW'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
 
 function drawBuildingMark() {
     const pos = worldToScreen(PlayerX, PlayerZ);
