@@ -93,7 +93,7 @@ function generateNetwork() {
         { x: 0, y: 10000*S, label: '1w', status: 'planned' },
         { x: -10000*S, y: 10000*S, label: '1w', status: 'planned' },
         { x: -10000*S, y: 0, label: '1w', status: 'planned' },
-        { x: -10000*S, y: -10000*S, label: '1w', status: 'planned' },
+        { x: -10000*S, y: -10000*S, label: '1w', status: 'completed' },
 
         // 第8层 (15000) - 1w5，无斜环，规划中
         { x: 0, y: -15000*S, label: '1w5', status: 'planned' },
