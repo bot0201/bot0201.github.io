@@ -275,8 +275,8 @@ function generateNetwork() {
 }
 
 // 硬编码统计常量
-const TOTAL_PLACED = 0;
-const TOTAL_DESTROYED = 0;
+const TOTAL_PLACED = 1431107;
+const TOTAL_DESTROYED = 3865770;
 
 function updateStats() {
     document.getElementById('placedCount').textContent = TOTAL_PLACED.toLocaleString();
@@ -405,9 +405,9 @@ function drawNodes() {
 }
 
 // 施工位置常量
-const PlayerX = -5075;
-const PlayerZ = -5075;
-const PlayerDirection = 'NW'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
+const PlayerX = -10255;
+const PlayerZ = 0;
+const PlayerDirection = 'W'; // 'N', 'S', 'E', 'W', 'NE', 'NW', 'SE', 'SW'
 
 function drawBuildingMark() {
     const pos = worldToScreen(PlayerX, PlayerZ);
