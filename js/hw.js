@@ -275,8 +275,8 @@ function generateNetwork() {
 }
 
 // 硬编码统计常量
-const TOTAL_PLACED = 1431107;
-const TOTAL_DESTROYED = 1500932;
+const TOTAL_PLACED = 1500932;
+const TOTAL_DESTROYED = 4020344;
 
 function updateStats() {
     document.getElementById('placedCount').textContent = TOTAL_PLACED.toLocaleString();
